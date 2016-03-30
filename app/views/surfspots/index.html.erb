@@ -1,2 +1,10 @@
-No surf spots yet!
+
+<% if @surfspots.any? %>
+  <% @surfspots.each do |spot| %>
+    <h2> <%= spot.name %> </h2>
+  <% end %>
+<% else %>
+  No surf spots yet
+<% end %>
+
 <a href='#'>Add a surf spot</a>

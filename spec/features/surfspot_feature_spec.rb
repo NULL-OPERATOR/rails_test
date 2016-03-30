@@ -11,7 +11,7 @@ feature 'Surfspots' do
 
   context "have been added" do
     before do
-      Surfspot.create(name: TheCove)
+      Surfspot.create(name: "TheCove")
     end
 
     scenario 'display restaurants' do

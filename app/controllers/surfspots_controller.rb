@@ -1,5 +1,5 @@
 class SurfspotsController < ApplicationController
   def index
-    # raise "h"
+    @surfspots = Surfspot.all
   end
 end
