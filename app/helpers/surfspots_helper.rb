@@ -1,0 +1,2 @@
+module SurfspotsHelper
+end
