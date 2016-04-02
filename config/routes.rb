@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :surfspots
+  resources :resources
 end
