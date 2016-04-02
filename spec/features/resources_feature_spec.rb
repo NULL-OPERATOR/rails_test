@@ -32,4 +32,16 @@ feature "resources" do
       expect(current_path).to eq "/resources"
     end
   end
+
+
+  context "viewing resources" do
+    let(:moon) { Resource.create(name: "moon") }
+
+    scenario "lets a user view a resource" do
+      visit "/resources"
+      click_link "moon"
+      expect(page).to have_content "moon"
+      expect(current_path).to eq "/resources/#{moon.id}"
+    end
+  end
 end

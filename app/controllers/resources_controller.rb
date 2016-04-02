@@ -14,6 +14,12 @@ class ResourcesController < ApplicationController
     redirect_to '/resources'
   end
 
+  def show
+    @resource = Resource.find(params[:id])
+  end
+
+  private
+
   def resource_params
     params.require(:resource).permit(:name)
   end

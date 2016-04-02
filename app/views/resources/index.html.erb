@@ -1,7 +1,7 @@
 
 <% if @resources.any? %>
   <% @resources.each do |resource| %>
-    <h2> <%= resource.name %> </h2>
+    <h2> <%= link_to resource.name, resource_path(resource) %> </h2>
   <% end %>
 <% else %>
   No resources yet
