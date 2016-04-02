@@ -1,6 +1,6 @@
-class CreateSurfspots < ActiveRecord::Migration
+class CreateResources < ActiveRecord::Migration
   def change
-    create_table :surfspots do |t|
+    create_table :resources do |t|
       t.string :name
       t.integer :rating
 

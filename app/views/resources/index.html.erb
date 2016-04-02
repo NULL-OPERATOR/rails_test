@@ -1,0 +1,10 @@
+
+<% if @resources.any? %>
+  <% @resources.each do |spot| %>
+    <h2> <%= spot.name %> </h2>
+  <% end %>
+<% else %>
+  No resources yet
+<% end %>
+
+<a href='#'>Add a resource</a>
