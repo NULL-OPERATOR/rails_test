@@ -3,6 +3,7 @@
   <% @resources.each do |resource| %>
     <h2> <%= link_to resource.name, resource_path(resource) %> </h2>
     <h2> <%= link_to "Edit #{resource.name}", edit_resource_path(resource) %> </h2>
+    <h2> <%= link_to "Delete #{resource.name}", resource_path(resource), method: :delete %> </h2>
   <% end %>
 <% else %>
   No resources yet

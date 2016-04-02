@@ -58,4 +58,17 @@ feature "resources" do
       expect(current_path).to eq "/resources"
     end
   end
+
+  context "deleting resources" do
+
+    before { Resource.create name: "mooon" }
+
+    scenario "removes a resource when delete link is clicked" do
+      visit "/resources"
+      click_link "Delete mooon"
+      expect(page).not_to have_content "mooon"
+      expect(page).to have_content "Resource deleted successfully"
+    end
+  end
+
 end
