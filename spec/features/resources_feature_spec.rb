@@ -35,13 +35,27 @@ feature "resources" do
 
 
   context "viewing resources" do
-    let(:moon) { Resource.create(name: "moon") }
+    let!(:moon) { Resource.create(name: "moon") }
 
     scenario "lets a user view a resource" do
       visit "/resources"
       click_link "moon"
       expect(page).to have_content "moon"
       expect(current_path).to eq "/resources/#{moon.id}"
+    end
+  end
+
+  context "editing resources" do
+
+    before { Resource.create(name: "moon") }
+
+    scenario "let a user edit a resource" do
+      visit "/resources"
+      click_link "Edit moon"
+      fill_in "Name", with: "hello moon moon"
+      click_button "Update Resource"
+      expect(page).to have_content "hello moon moon"
+      expect(current_path).to eq "/resources"
     end
   end
 end
