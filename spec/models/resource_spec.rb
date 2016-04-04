@@ -10,4 +10,10 @@ describe Resource, type: :model do
     expect(resource).not_to be_valid
   end
 
+  it "duplicate names are not valid" do
+    Resource.create(name: "Othello")
+    resource = Resource.create(name: "Othello")
+    expect(resource).to have(1).error_on(:name)
+  end
+
 end
