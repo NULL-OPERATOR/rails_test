@@ -1,7 +1,7 @@
 <%= form_for [@resource, @comment] do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_area :comment %>
-  <%= f.rating :rating %>
+  <%= f.label :info %>
+  <%= f.text_area :info %>
+  <%= f.label :rating %>
   <%= f.select :rating, (1..5) %>
   <%= f.submit "Post comment" %>
 <% end %>

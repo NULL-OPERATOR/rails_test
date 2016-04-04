@@ -7,10 +7,12 @@ class CommentsController < ApplicationController
   def create
     @resource = Resource.find(params[:resource_id])
     @resource.comments.create(comment_params)
+
+    redirect_to resources_path
   end
 
   def comment_params
-    params.require(:review).permit(:thoughts, :rating)
+    params.require(:comment).permit(:info, :rating)
   end
-  
+
 end

@@ -4,10 +4,26 @@
     <h2> <%= link_to resource.name, resource_path(resource) %> </h2>
     <h2> <%= link_to "Edit #{resource.name}", edit_resource_path(resource) %> </h2>
     <h2> <%= link_to "Delete #{resource.name}", resource_path(resource), method: :delete %> </h2>
-    <h2> <%= link_to "Add a comment", new_resource_comment_path(resource) %> </h2>
+    <h2> <%= link_to "Add comment for #{resource.name}", new_resource_comment_path(resource) %> </h2>
+
+    <h3>Comments for <%= resource.name %></h3>
+    <% if resource.comments.any? %>
+    <ul>
+      <% resource.comments.each do |comment| %>
+      <li>
+        <%= comment.info %>, <strong><%= comment.rating %></strong>/5
+      </li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p>No comments.</p>
+    <% end %>
   <% end %>
+
 <% else %>
   No resources yet
 <% end %>
+
+
 
 <a href="resources/new">Add a resource</a>
