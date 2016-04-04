@@ -31,6 +31,18 @@ feature "resources" do
       expect(page).to have_content "Moon"
       expect(current_path).to eq "/resources"
     end
+
+    context "invalid resource" do
+      scenario "name is too short" do
+        visit "/resources"
+        click_link "Add a resource"
+        fill_in "Name", with: "on"
+        click_button "Create Resource"
+        expect(page).not_to have_css 'h2', text: 'on'
+        expect(page).to have_content 'error'
+      end
+    end
+
   end
 
 
