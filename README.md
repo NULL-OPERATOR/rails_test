@@ -1,5 +1,6 @@
 ## README
 
+a project to practice TDD and other principles in Rails
 
 <!--
 This README would normally document whatever steps are necessary to get the
