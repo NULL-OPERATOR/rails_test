@@ -11,11 +11,8 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.create(resource_params)
-    if @resource.save
-      redirect_to resources_path
-    else
-      render "new"
-    end
+    return redirect_to resources_path if @resource.save
+    render "new"
   end
 
   def show
@@ -29,23 +26,17 @@ class ResourcesController < ApplicationController
   def update
     @resource = find_resource(params[:id])
     @resource.update(resource_params)
-
-    redirect_to "/resources"
+    redirect_to resources_path
   end
 
   def destroy
     @resource = find_resource(params[:id])
     @resource.destroy
     flash[:notice] = "Resource deleted successfully"
-
-    redirect_to "/resources"
+    redirect_to resources_path
   end
 
   private
-
-  def find_resource(params)
-    Resource.find(params)
-  end
 
   def resource_params
     params.require(:resource).permit(:name)
