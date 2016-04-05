@@ -1,12 +1,10 @@
 require "rails_helper"
 
 feature "commenting a resource" do
-  # before { Resource.create name: "Moon" }
+
   before do
-    visit "/resources"
-    click_link 'Add a resource'
-    fill_in 'Name', with: 'Moon'
-    click_button 'Create Resource'
+    sign_up
+    add_resource
   end
 
   scenario "allows users to leave a comment" do

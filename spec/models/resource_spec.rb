@@ -15,5 +15,4 @@ describe Resource, type: :model do
     resource = Resource.create(name: "Othello")
     expect(resource).to have(1).error_on(:name)
   end
-
 end
