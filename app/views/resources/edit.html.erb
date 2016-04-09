@@ -1,5 +1,7 @@
-<%= form_for @resource do |f| %>
+<%= render partial: 'edit_form', locals: { resource: @resource } %>
+
+<!-- <%= form_for @resource do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
-<% end %>
+<% end %> -->
