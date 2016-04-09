@@ -1,19 +1,2 @@
 <%= render partial: 'edit_form', locals: { resource: @resource } %>
 <%= render partial: 'new_errors', locals: { resource: @resource } %>
-
-<!-- <%= form_for @resource do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %> -->
-
-<!-- <% if @resource.errors.any? %>
-  <section id="errors">
-    <h2> <%= pluralize(@resource.errors.count, "error") %> - resource not saved: </h2>
-    <ul>
-      <% @resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </section>
-<% end %> -->
