@@ -1,0 +1,7 @@
+<%= form_for(resources) do |f| %>
+  <%= f.label :info %>
+  <%= f.text_area :info %>
+  <%= f.label :rating %>
+  <%= f.select :rating, (1..5) %>
+  <%= f.submit "Post comment" %>
+<% end %>

@@ -1,7 +1,1 @@
-<%= form_for [@resource, @comment] do |f| %>
-  <%= f.label :info %>
-  <%= f.text_area :info %>
-  <%= f.label :rating %>
-  <%= f.select :rating, (1..5) %>
-  <%= f.submit "Post comment" %>
-<% end %>
+<%= render partial: 'new_form', locals: { resources: [@resource, @comment] } %>
