@@ -1,0 +1,12 @@
+<h3>Comments for <%= resource.name %></h3>
+<% if resource.comments.any? %>
+  <ul>
+    <% resource.comments.each do |comment| %>
+    <li>
+      <%= comment.info %>, <strong><%= comment.rating %></strong>/5
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No comments.</p>
+<% end %>
